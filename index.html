@@ -2,84 +2,236 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Pakua Federación Mundial</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakua Federación Mundial - Plataforma Virtual de Artes Marciales | Kung Fu y Yoga</title>
+  <meta name="description" content="Plataforma virtual oficial de Pakua Federación Mundial. Aprende artes marciales, kung fu y yoga con los mejores instructores. Únete a nuestra comunidad global de practicantes.">
+  <meta name="keywords" content="pakua, artes marciales, kung fu, yoga, federación mundial, plataforma virtual, entrenamiento online, meditación, defensa personal">
+  <meta name="author" content="Pakua Federación Mundial">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#8B0000">
+  <meta name="language" content="Spanish">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="icon" href="./imagenes/logo.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="./imagenes/logo.png" sizes="180x180">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="preload" href="./stylesheet.css">
   <link rel="stylesheet" href="./stylesheet.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preload" href="./imagenes/img1.jpg" as="image" type="image/jpeg">
+  <link rel="preload" href="./imagenes/logo.png" as="image" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="icon" href="./imagenes/logo.png" type="image/png">
 </head>
 
 <body>
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<a href="#main-content" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
+<header role="banner">
+  <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Navegación principal">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="./index.html">
-        <img src="./imagenes/logo.png" alt="logo" class="me-2">
-        <img src="./imagenes/img.png" alt="nombre" class="nombre">
+      <a class="navbar-brand d-flex align-items-center" href="./index.html" aria-label="Ir a página principal de Pakua Federación Mundial">
+        <img src="./imagenes/logo.png"
+             alt="Logo de Pakua Federación Mundial - Símbolo tradicional de artes marciales"
+             class="me-2"
+             >
+        <img src="./imagenes/img.png"
+             alt="Pakua Federación Mundial - Texto del logo"
+             class="nombre"
+            >
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuHamburguesa"
-              aria-controls="menuHamburguesa" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuHamburguesa"
+              aria-controls="menuHamburguesa"
+              aria-expanded="false"
+              aria-label="Abrir menú de navegación">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="menuHamburguesa">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a href="pages/registro.html" class="nav-link">REGISTRATE</a></li>
-          <li class="nav-item"><a href="pages/inicio-de-sesion.html" class="nav-link">LOGIN</a></li>
-          <li class="nav-item"><a href="pages/Pagina-principal.html" class="nav-link">PÁGINA PRINCIPAL</a></li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" role="menubar">
+          <li class="nav-item" role="none">
+            <a href="pages/registro.html" class="nav-link" role="menuitem" title="Crear cuenta nueva en Pakua">REGISTRATE</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a href="pages/inicio-de-sesion.html" class="nav-link" role="menuitem" title="Iniciar sesión en tu cuenta">LOGIN</a>
+          </li>
+          <li class="nav-item" role="none">
+            <a href="pages/Pagina-principal.html" class="nav-link" role="menuitem" title="Ir a la página principal del sitio">PÁGINA PRINCIPAL</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
 
-<main class="index-main">
-  <div class="fotos">
-    <img src="imagenes/img1.jpg" alt="Clase de Pakua" class="imagen1">
-    <img src="imagenes/img2.jpg" alt="Practicando Pakua" class="imagen2">
-  </div>
+<main id="main-content" class="index-main" role="main" itemprop="mainContentOfPage">
+  <!-- Hero Section -->
+  <section class="hero-section" aria-labelledby="hero-title">
+    <div class="fotos" role="img" aria-label="Galería de imágenes de entrenamiento Pakua">
+      <img src="imagenes/img1.jpg"
+           alt="Estudiantes practicando Pakua en clase grupal con instructor certificado, mostrando técnicas de artes marciales tradicionales"
+           class="imagen1"
+          >
+      <img src="imagenes/img2.jpg"
+           alt="Practicante de Pakua ejecutando técnica avanzada de artes marciales con postura correcta y concentración"
+           class="imagen2"
+           >
+    </div>
 
-  <h1 class="index-h1">Plataforma Virtual</h1>
-  <h2 class="index-h2">¡Te damos la Bienvenida! Aquí podrás encontrar todos los contenidos necesarios para tu camino en Pakua</h2>
+    <h1 id="hero-title" class="index-h1" itemprop="name">
+      Plataforma Virtual Pakua - Artes Marciales Online
+    </h1>
+    <h2 class="index-h2" itemprop="description">
+      ¡Te damos la Bienvenida! Aquí podrás encontrar todos los contenidos necesarios para tu camino en Pakua: kung fu, yoga, meditación y defensa personal
+    </h2>
+  </section>
 
-  <div class="botones-container">
-    <a href="pages/info.html" class="boton">
-      <div class="imagen">
-        <img src="imagenes/muestra1.jpg" alt="Conoce más sobre nosotros" class="imagen">
-        <div class="informacion">
-          <h3>CONOCE MÁS SOBRE NOSOTROS</h3>
-        </div>
+  <section class="cta-section" aria-labelledby="cta-title">
+    <h2 id="cta-title" class="sr-only">Opciones principales para comenzar</h2>
+
+    <div class="botones-container" role="list">
+      <article class="boton-card" role="article">
+        <a href="pages/info.html"
+           class="boton"
+           aria-describedby="info-desc"
+           role="button"
+           title="Conoce la historia y filosofía de Pakua Federación Mundial">
+          <div class="imagen-container">
+            <img src="imagenes/muestra1.jpg"
+                 alt="Imagen representativa de la historia y filosofía milenaria de Pakua"
+                 class="imagen"
+                >
+            <div class="informacion">
+              <h3 id="info-desc">CONOCE MÁS SOBRE NOSOTROS</h3>
+              <p class="card-description">Descubre la historia, filosofía y metodología de Pakua Federación Mundial</p>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="boton-card" >
+        <a href="pages/inicio-de-sesion.html"
+           class="boton"
+           aria-describedby="login-desc"
+           role="button"
+           title="Inicia sesión para acceder a tu entrenamiento personalizado">
+          <div class="imagen-container">
+            <img src="imagenes/muestra1.jpg"
+                 alt="Estudiante comenzando su práctica de Pakua con guía de instructor certificado"
+                 class="imagen"
+                >
+            <div class="informacion">
+              <h3 id="login-desc">¡INICIA TU CAMINO EN PAKUA!</h3>
+              <p class="card-description">Accede a tu cuenta y comienza tu entrenamiento personalizado de artes marciales</p>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" aria-labelledby="features-title">
+    <div class="container">
+      <h2 id="features-title" class="section-title">¿Por qué elegir Pakua Federación Mundial?</h2>
+      <div class="features-grid" role="list">
+        <article class="feature-item" role="article">
+          <i class="fas fa-globe-americas" aria-hidden="true"></i>
+          <h3>Presencia Mundial</h3>
+          <p>Más de 45 años de experiencia en artes marciales con presencia en múltiples países y miles de estudiantes</p>
+        </article>
+        <article class="feature-item" role="article">
+          <i class="fas fa-laptop" aria-hidden="true"></i>
+          <h3>Plataforma Virtual Avanzada</h3>
+          <p>Entrena desde casa con nuestra plataforma interactiva, videos HD y seguimiento personalizado</p>
+        </article>
+        <article class="feature-item" role="article">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h3>Comunidad Global</h3>
+          <p>Únete a miles de practicantes alrededor del mundo y comparte tu experiencia en artes marciales</p>
+        </article>
       </div>
-    </a>
-
-    <a href="pages/inicio-de-sesion.html" class="boton">
-      <div class="imagen">
-        <img src="imagenes/muestra1.jpg" alt="Inicia tu camino en Pakua" class="imagen">
-        <div class="informacion">
-          <h3>¡INICIA TU CAMINO EN PAKUA!</h3>
-        </div>
-      </div>
-    </a>
-  </div>
+    </div>
+  </section>
 </main>
 
-<footer>
-  <div class="footer-links">
-    <a href="https://www.instagram.com/explore/" id="red1"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/" id="red2"><i class="fa-brands fa-square-facebook"></i></a>
-    <a href="https://www.youtube.com/" id="red3"><i class="fa-brands fa-youtube"></i></a>
-    <br>
-    <a href="index.html">Inicio</a>
-    <a href="pages/info.html">Nosotros</a>
-    <a href="#">Contacto</a>
-  </div>
-  <div class="copyright">
-    &copy; 2025 Pakua Federación Mundial. Todos los derechos reservados.
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-links">
+      <nav aria-label="Redes sociales">
+        <a href="https://www.instagram.com/pakuaoficial/"
+           id="red1"
+           aria-label="Síguenos en Instagram para ver contenido diario de Pakua"
+           rel="noopener noreferrer"
+           target="_blank"
+           title="Instagram oficial de Pakua">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/pakuaoficial/"
+           id="red2"
+           aria-label="Síguenos en Facebook para noticias y eventos"
+           rel="noopener noreferrer"
+           target="_blank"
+           title="Facebook oficial de Pakua">
+          <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.youtube.com/pakuaoficial/"
+           id="red3"
+           aria-label="Suscríbete a nuestro canal de YouTube para videos de entrenamiento"
+           rel="noopener noreferrer"
+           target="_blank"
+           title="Canal de YouTube de Pakua">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+      </nav>
+
+      <nav aria-label="Enlaces del sitio">
+        <a href="index.html" aria-current="page" title="Página principal">Inicio</a>
+        <a href="pages/info.html" title="Información sobre Pakua">Nosotros</a>
+        <a href="#" title="Contactar con Pakua">Contacto</a>
+        <a href="#" title="Política de privacidad">Política de Privacidad</a>
+      </nav>
+    </div>
+
+    <div class="copyright">
+      <small>&copy; 2025 Pakua Federación Mundial. Todos los derechos reservados. Fundada en 1976.</small>
+    </div>
   </div>
 </footer>
 
+<!-- Scripts optimizados -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Intersection Observer para lazy loading y animaciones -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    if ('IntersectionObserver' in window) {
+      // Animaciones suaves al hacer scroll
+      const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      // Observar elementos animables
+      document.querySelectorAll('.feature-item, .boton-card').forEach(el => {
+        animationObserver.observe(el);
+      });
+    }
+
+
+  });
+</script>
+
 </body>
 </html>
