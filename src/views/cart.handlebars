@@ -1,0 +1,25 @@
+<h1 class="title">Carrito</h1>
+{{#if message}}
+  <article class="message is-warning">
+    <div class="message-body">{{message}}</div>
+  </article>
+{{/if}}
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+      <tr>
+        <td>{{this.product.title}}</td>
+        <td>{{this.quantity}}</td>
+        <td>${{this.product.price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a class="button" href="/products">Seguir comprando</a>
