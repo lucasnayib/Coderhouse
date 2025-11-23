@@ -1,0 +1,9 @@
+go 1.22
+
+use (
+./services/auth
+./services/users
+./services/routines
+./services/messaging
+./services/common
+)

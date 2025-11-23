@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  max-width: 720px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input, select, button {
+  padding: 8px;
+}
+
+button {
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: #c00;
+}
