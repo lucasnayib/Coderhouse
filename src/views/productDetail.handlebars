@@ -1,0 +1,16 @@
+<h1 class="title">{{product.title}}</h1>
+<div class="box">
+  <p class="subtitle">Categoría: {{product.category}}</p>
+  <p>{{product.description}}</p>
+  <p class="has-text-weight-bold">Precio: $ {{product.price}}</p>
+  <p>Stock: {{product.stock}}</p>
+  <p>Estado: {{#if product.status}}Disponible{{else}}No disponible{{/if}}</p>
+  {{#if cartId}}
+    <form action="/api/carts/{{cartId}}/products/{{product._id}}" method="post" class="mt-4">
+      <button type="submit" class="button is-primary">Agregar al carrito</button>
+    </form>
+  {{else}}
+    <p class="has-text-grey">Proporciona un cartId en la URL para agregar este producto.</p>
+  {{/if}}
+</div>
+<a class="button" href="/products">Volver</a>

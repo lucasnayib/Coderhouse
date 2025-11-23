@@ -1,0 +1,42 @@
+<h1 class="title">Productos</h1>
+<div class="columns is-multiline">
+  {{#each products}}
+    <div class="column is-one-quarter">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">{{title}}</p>
+          <p class="subtitle is-6">{{category}}</p>
+          <p>{{description}}</p>
+          <p class="has-text-weight-bold">$ {{price}}</p>
+          <p>Stock: {{stock}} | {{#if status}}Disponible{{else}}No disponible{{/if}}</p>
+        </div>
+        <footer class="card-footer">
+          <a href="/products/{{_id}}" class="card-footer-item">Ver detalle</a>
+          {{#if ../cartId}}
+            <form class="card-footer-item" action="/api/carts/{{../cartId}}/products/{{_id}}" method="post">
+              <button class="button is-link is-small" type="submit">Agregar al carrito</button>
+            </form>
+          {{else}}
+            <span class="card-footer-item">Proporciona cartId para agregar</span>
+          {{/if}}
+        </footer>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  {{#if pagination.hasPrevPage}}
+    <a class="pagination-previous" href="/products?page={{pagination.prevPage}}&limit={{pagination.limit}}{{#if pagination.sort}}&sort={{pagination.sort}}{{/if}}{{#if pagination.query}}&query={{pagination.query}}{{/if}}{{#if cartId}}&cartId={{cartId}}{{/if}}">Anterior</a>
+  {{else}}
+    <a class="pagination-previous" disabled>Anterior</a>
+  {{/if}}
+  {{#if pagination.hasNextPage}}
+    <a class="pagination-next" href="/products?page={{pagination.nextPage}}&limit={{pagination.limit}}{{#if pagination.sort}}&sort={{pagination.sort}}{{/if}}{{#if pagination.query}}&query={{pagination.query}}{{/if}}{{#if cartId}}&cartId={{cartId}}{{/if}}">Siguiente</a>
+  {{else}}
+    <a class="pagination-next" disabled>Siguiente</a>
+  {{/if}}
+  <ul class="pagination-list">
+    <li><span class="pagination-link is-current">Página {{pagination.page}} de {{pagination.totalPages}}</span></li>
+  </ul>
+</nav>
