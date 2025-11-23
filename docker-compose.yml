@@ -1,0 +1,96 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fitness
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  solr:
+    image: solr:9
+    ports:
+      - "8983:8983"
+    command: solr-precreate routines
+
+  memcached:
+    image: memcached:1.6
+    ports:
+      - "11211:11211"
+
+  auth-service:
+    build: ./services/auth
+    environment:
+      JWT_SECRET: dev-secret
+      REFRESH_SECRET: refresh-secret
+      ADMIN_USER: admin
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: adminpass
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+
+  users-service:
+    build: ./services/users
+    environment:
+      JWT_SECRET: dev-secret
+    ports:
+      - "8082:8082"
+    depends_on:
+      - auth-service
+
+  routines-service:
+    build: ./services/routines
+    environment:
+      JWT_SECRET: dev-secret
+      SOLR_HOST: solr
+      MEMCACHED_HOST: memcached:11211
+    ports:
+      - "8083:8083"
+    depends_on:
+      - auth-service
+      - solr
+      - memcached
+
+  messaging-service:
+    build: ./services/messaging
+    environment:
+      JWT_SECRET: dev-secret
+      MONGO_URI: mongodb://mongodb:27017
+      RABBITMQ_URI: amqp://guest:guest@rabbitmq:5672/
+    ports:
+      - "8084:8084"
+    depends_on:
+      - mongodb
+      - rabbitmq
+
+  web:
+    build: ./web
+    ports:
+      - "5173:80"
+    depends_on:
+      - auth-service
+      - users-service
+      - routines-service
+      - messaging-service
+
+volumes:
+  mysql_data:
+  mongo_data:

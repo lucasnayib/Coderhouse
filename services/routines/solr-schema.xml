@@ -1,0 +1,10 @@
+<schema name="routines" version="1.6">
+  <fields>
+    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="title" type="text_general" indexed="true" stored="true" />
+    <field name="description" type="text_general" indexed="true" stored="true" />
+    <field name="author" type="string" indexed="true" stored="true" />
+  </fields>
+  <uniqueKey>id</uniqueKey>
+  <defaultSearchField>title</defaultSearchField>
+</schema>

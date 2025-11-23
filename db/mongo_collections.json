@@ -1,0 +1,24 @@
+{
+  "collections": {
+    "messages": {
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": ["conversationId", "sender", "receiver", "body", "createdAt"],
+          "properties": {
+            "conversationId": {"bsonType": "string"},
+            "sender": {"bsonType": "string"},
+            "receiver": {"bsonType": "string"},
+            "body": {"bsonType": "string"},
+            "createdAt": {"bsonType": "date"}
+          }
+        }
+      },
+      "indexes": [
+        {"keys": {"conversationId": 1, "createdAt": -1}},
+        {"keys": {"sender": 1}},
+        {"keys": {"receiver": 1}}
+      ]
+    }
+  }
+}
