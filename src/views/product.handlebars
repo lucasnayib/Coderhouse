@@ -1,0 +1,20 @@
+<section class="row">
+  <div class="col-md-8">
+    <h1 class="h3">{{product.title}}</h1>
+    <p class="text-muted">Categoría: {{product.category}}</p>
+    <p>{{product.description}}</p>
+    <p class="h4">$ {{product.price}}</p>
+    <p>Disponibilidad: {{#if product.status}}Disponible{{else}}Agotado{{/if}}</p>
+    <p>Stock: {{product.stock}}</p>
+  </div>
+  <div class="col-md-4">
+    {{#if cartId}}
+      <form action="/api/carts/{{cartId}}/products/{{product._id}}" method="post" class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+      </form>
+    {{else}}
+      <div class="alert alert-warning">Agrega ?cid=ID en la URL para habilitar la compra.</div>
+    {{/if}}
+    <a class="btn btn-link mt-2" href="/products">Volver al listado</a>
+  </div>
+</section>
